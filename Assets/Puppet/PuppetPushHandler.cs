@@ -8,20 +8,13 @@ using UnityEngine;
 
 public class PuppetPushHandler : MonoBehaviour
 {
-    private static PushNotificationReceivedEventArgs _pushEventArgs = null;
-    private static object _pushLock = new object();
+    public static PushNotificationReceivedEventArgs _pushEventArgs = null;
+    public static object _pushLock = new object();
 
     public PuppetPushDialog Dialog;
 
     void Awake()
     {
-        Push.PushNotificationReceived += (sender, e) =>
-        {
-            lock (_pushLock)
-            {
-                _pushEventArgs = e;
-            }
-        };
     }
 
 #if UNITY_EDITOR

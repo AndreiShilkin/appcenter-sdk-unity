@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Microsoft.AppCenter.Unity.Crashes;
 using AOT;
+using Microsoft.AppCenter.Unity.Push;
 
 public class PuppetCrashes : MonoBehaviour
 {
@@ -82,8 +83,16 @@ public class PuppetCrashes : MonoBehaviour
 
     public void NullReferenceException()
     {
-        string str = null;
-        Debug.Log(str.Length);
+        //string str = null;
+        //Debug.Log(str.Length);
+        Debug.Log("=== subscribing to push event");
+        Push.PushNotificationReceived += (sender, e) =>
+        {
+            lock (PuppetPushHandler._pushLock)
+            {
+                PuppetPushHandler._pushEventArgs = e;
+            }
+        };
     }
 
     public void ExceptionInNewThread()
