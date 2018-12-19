@@ -83,8 +83,6 @@ public class PuppetCrashes : MonoBehaviour
 
     public void NullReferenceException()
     {
-        //string str = null;
-        //Debug.Log(str.Length);
         Debug.Log("=== subscribing to push event");
         Push.PushNotificationReceived += (sender, e) =>
         {
