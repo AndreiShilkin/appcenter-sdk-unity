@@ -18,7 +18,7 @@ string DistributionGroup = "Private Release Script Group";
 string Token = EnvironmentVariable("APP_CENTER_API_TOKEN");
 string BaseUrl = "https://api.appcenter.ms";
 ApplicationInfo CurrentApp = null;
-string ProjectPath = "Assets/Puppet";
+string ProjectPath = "Assets";
 string BuildFolder = GetBuildFolder("Puppet", ProjectPath);
 
 public enum Environment
@@ -110,7 +110,7 @@ Setup(context =>
         ProjectPath = ".";
         BuildFolder = GetBuildFolder("Puppet", ProjectPath);
     }*/
-
+//BuildFolder = GetBuildFolder("Puppet", ProjectPath);
     var platformString = Argument<string>("Platform", "ios");
     var platform = Platform.iOS;
 
