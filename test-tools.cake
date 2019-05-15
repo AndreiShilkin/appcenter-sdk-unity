@@ -18,7 +18,7 @@ string DistributionGroup = "Private Release Script Group";
 string Token = EnvironmentVariable("APP_CENTER_API_TOKEN");
 string BaseUrl = "https://api.appcenter.ms";
 ApplicationInfo CurrentApp = null;
-string ProjectPath = "AppCenterPuppetApp";
+string ProjectPath = "Assets/Puppet";
 string BuildFolder = GetBuildFolder("Puppet", ProjectPath);
 
 public enum Environment
