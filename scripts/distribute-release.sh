@@ -9,7 +9,7 @@ SCRIPTING_BACKEND=""
 for i in "$@"; do
     case $1 in
         -m|--mandatory) MANDATORY="-Mandatory=true" ;;
-        -e|--environment) ENVIRONMENT="-Environment=Prod"; shift ;;
+        -e|--environment) ENVIRONMENT="-Environment=$2"; shift ;;
         -p|--platform) PLATFORM="-Platform=$2"; shift ;;
         -s|--scriptingBackend) SCRIPTING_BACKEND="-ScriptingBackend=$2"; shift ;;
         -g|--group) GROUP="-Group=$2"; shift ;;
@@ -18,4 +18,4 @@ for i in "$@"; do
     shift
 done
 
-../test-tools.cake -target=ReleaseApplication $GROUP $SCRIPTING_BACKEND $MANDATORY $PLATFORM $ENVIRONMENT
+../build.sh -s ../test-tools.cake -target=ReleaseApplication $GROUP $SCRIPTING_BACKEND $MANDATORY $PLATFORM $ENVIRONMENT

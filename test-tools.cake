@@ -103,13 +103,13 @@ Setup(context =>
     // Read arguments
     var environment = Environment.Prod;
     if (Argument("Environment", "int") == "int")
-    {
+  /*   {
         environment = Environment.Int;
         Token = EnvironmentVariable("APP_CENTER_INT_API_TOKEN");
         BaseUrl = "https://asgard-int.trafficmanager.net/api";
         ProjectPath = ".";
         BuildFolder = GetBuildFolder("Puppet", ProjectPath);
-    }
+    }*/
 
     var platformString = Argument<string>("Platform", "ios");
     var platform = Platform.iOS;
