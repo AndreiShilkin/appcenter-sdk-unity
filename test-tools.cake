@@ -161,7 +161,7 @@ Task("CreateIosArchive").IsDependentOn("IncreaseIosVersion")
     var xcodeProjectPath = GetDirectories(BuildFolder + "/*/*.xcodeproj").Single().FullPath;
     Information("Creating archive...");
     var archiveName = Statics.TemporaryPrefix + "iosArchive.xcarchive";
-    StartProcess("xcodebuild", "-project \"" + xcodeProjectPath + "\" -configuration Release -scheme Unity-iPhone -archivePath \"" + archiveName + "\" archive");
+    StartProcess("xcodebuild", "-project \"" + xcodeProjectPath + "\" -configuration Release -scheme Unity-iPhone -archivePath \"" + archiveName + "\" archive -allowProvisioningUpdates");
 
     // Just create the empty plist file here so it doesn't cluttering the repo.
     var plistName = Statics.TemporaryPrefix + "exportoptions.plist";
