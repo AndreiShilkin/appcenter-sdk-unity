@@ -537,7 +537,6 @@ void GetUwpPackage (AppCenterModule module, bool usePublicFeed) {
 
 void BuildApps(string type, string projectPath = ".")
 {
-    Statics.Context.CleanDirectory(outputDirectory);
     if (Statics.Context.IsRunningOnUnix())
     {        
         var platform = Argument("Platform", "both");
