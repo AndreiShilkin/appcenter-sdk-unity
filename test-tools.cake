@@ -202,7 +202,7 @@ Task("IncreaseAndroidVersion").Does(()=>
 Task("ReleaseApplication")
 .Does(()=>
 {
-    if (CurrentApp.AppPlatform == Platform.iOS)
+   /*  if (CurrentApp.AppPlatform == Platform.iOS)
     {
         RunTarget("CreateIosArchive");
     }
@@ -214,7 +214,7 @@ Task("ReleaseApplication")
     {
         Error("Cannot distribute for this platform.");
         return;
-    }
+    }*/
 
     // Start the upload.
     Information("Initiating distribution process...");
@@ -224,7 +224,7 @@ Task("ReleaseApplication")
 
     // Upload the file to the given endpoint. The label "ipa" is correct for all platforms.
     var uploadUrl = startUploadResponse["upload_url"].ToString();
-    HttpUploadFile(uploadUrl, CurrentApp.AppPath, "ipa");
+    HttpUploadFile(uploadUrl, "./CAKE_SCRIPT_TEMPPuppetBuilds/", "ipa");
 
     // Commit the upload
     Information("Committing distribution...");

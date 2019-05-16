@@ -634,7 +634,7 @@ void VerifyAppsBuild(string type, string platformIdentifier, string projectPath,
     }
 
     // Remove all remaining builds.
-    Statics.Context.CleanDirectory(outputDirectory);
+   // Statics.Context.CleanDirectory(outputDirectory);
 }
 
 Task("PublishPackagesToStorage").Does(()=>
