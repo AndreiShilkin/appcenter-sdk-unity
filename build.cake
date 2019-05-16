@@ -630,7 +630,7 @@ void VerifyAppsBuild(string type, string platformIdentifier, string projectPath,
         verificatonMethod(outputDirectory);
 
         // Remove all remaining builds.
-        Statics.Context.CleanDirectory(outputDirectory);
+        //Statics.Context.CleanDirectory(outputDirectory);
     }
 
     // Remove all remaining builds.
