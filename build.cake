@@ -627,7 +627,7 @@ void VerifyAppsBuild(string type, string platformIdentifier, string projectPath,
     foreach (var buildType in buildTypes)
     {
         // Remove all existing builds and create new build.
-        // Statics.Context.CleanDirectory(outputDirectory);
+        Statics.Context.CleanDirectory(outputDirectory);
         if (EnvironmentVariable("INCREASE_VERSION") == "YES") {
             ExecuteUnityMethod(incrementVersionPrefix, platformIdentifier);
         }
