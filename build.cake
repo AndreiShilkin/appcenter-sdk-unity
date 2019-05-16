@@ -537,10 +537,16 @@ void GetUwpPackage (AppCenterModule module, bool usePublicFeed) {
 
 void BuildApps(string type, string projectPath = ".")
 {
+    Statics.Context.CleanDirectory(outputDirectory);
     if (Statics.Context.IsRunningOnUnix())
-    {
-        VerifyIosAppsBuild(type, projectPath);
-        VerifyAndroidAppsBuild(type, projectPath);
+    {        
+        var platform = Argument("Platform", "both");
+        if (platform == "ios" || platform == "both") {
+            VerifyIosAppsBuild(type, projectPath);
+        }
+        if (platform == "android" || platform == "both") {
+            VerifyAndroidAppsBuild(type, projectPath);
+        }        
     }
     else
     {
