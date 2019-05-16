@@ -469,7 +469,7 @@ Task("BuildDemoApps")
     .IsDependentOn("AddPackagesToDemoApp")
     .Does(()=>
 {
-    BuildApps("Demo", "AppCenterDemoApp");
+    BuildApps("Puppet", "AppCenterDemoApp");
 }).OnError(HandleError);
 
 // Downloads the NDK from the specified location.
